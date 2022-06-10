@@ -1,5 +1,6 @@
 package com.example.graphql;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -18,6 +19,7 @@ public class Book {
 
     private String publisher;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     private Author author;
 
